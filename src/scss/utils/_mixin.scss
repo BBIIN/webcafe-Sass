@@ -17,6 +17,13 @@
   right: $r;
 }
 
+@mixin posBottomY {
+  @include pos;
+  top: 100%;
+  transform: translateY(-100%);
+}
+
+
 @mixin posCenterX {
   @include pos;
   left: 50%;
