@@ -14,7 +14,7 @@
   @include desktop{
     position: relative;
     @include containerMax;
-;  }
+  }
 }
 
 // 로고
@@ -28,7 +28,7 @@
   }
 
   @include desktop {
-    @include posCenter;
+    @include posCenterY;
   }
 }
 
