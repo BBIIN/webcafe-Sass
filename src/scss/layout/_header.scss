@@ -3,12 +3,12 @@
 
 .appHeader {
   padding: rem(16px) rem(24px);
+  @include flexbox(column);
+  gap: rem(16px);
 
   @include mobile {
     background: $dark-brown;
     color: $white;
-    @include flexbox(column);
-    gap: rem(16px);
   }
 
   @include desktop{

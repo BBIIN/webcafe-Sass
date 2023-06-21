@@ -396,7 +396,7 @@ legend {
   border: 1px solid currentColor;
 }
 
-@media (max-width: 766px) {
+@media (max-width: 767px) {
   .button--burger {
     width: 2.25rem;
     height: 2.25rem;
@@ -430,7 +430,7 @@ legend {
     transform: translateY(-100%);
   }
 }
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   .button--burger {
     display: none;
   }
@@ -438,19 +438,19 @@ legend {
 
 .appHeader {
   padding: 1rem 1.5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 1rem;
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
   .appHeader {
     background: #38302e;
     color: #ffffff;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    gap: 1rem;
   }
 }
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   .appHeader {
     position: relative;
     max-width: 64rem;
@@ -468,12 +468,11 @@ legend {
   display: block;
   height: 100%;
 }
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   .logo {
     position: absolute;
-    left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
   }
 }
 
@@ -483,7 +482,7 @@ legend {
   justify-content: flex-end;
   align-items: stretch;
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
   .memberOnly {
     order: -1;
   }
@@ -496,12 +495,12 @@ legend {
   align-items: stretch;
   gap: 1rem;
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
   .searchForm__group .formInput {
     flex-grow: 1;
   }
 }
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   .searchForm__group .formInput {
     width: 25rem;
   }
