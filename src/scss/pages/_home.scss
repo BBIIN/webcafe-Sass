@@ -1,4 +1,4 @@
-@use "./../utils" as *;
+@use "../utils" as *;
 
 .appMain {
   @include paddingX(20px);
@@ -48,29 +48,49 @@
 
 // 추천 서적
 .book {
-
   &__cover {
     width: 70%;
     @include autoMargin;
-    @include paddingX(10px);
     text-align: center;
-    &Image {
-      @include respons;
-    }
+  }
+
+  &__info {
+    @include flexbox($wrap: wrap, $justify: center);
+    column-gap: rem(8px);
+  }
+  @at-root .ratingStar {
+    width: 100%;
+    text-align: center;
+    font-size: rem(36px);
   }
 }
 
 // 새소식
 .news {
-
-  
   @at-root .iframeWrapper {
-    @include ratio;
+    @include ratio(16, 9);
   }
 }
 
 // 게시판
 .board {
+  position: relative;
+  &__item {
+    margin: 8px 0;
+    @include flexbox;
+    column-gap: rem(8px);
+  }
+  &__link {
+    flex-grow: 1;
+    @include textOver;
+  }
+  &__date {
+    /* flex-basis: fill; */
+    white-space: nowrap;
+  }
+  &__more {
+    @include posRightTop;
+  }
 }
 
 // 인기 사이트
@@ -79,4 +99,13 @@
 
 // 트위터
 .twitter {
+  &__userProfile {
+    @include ratio(1, 1);
+  }
+
+  &__userProfileImage {
+    @include respons(width, 100%);
+    border-radius: 50%;
+    @include fit(cover, 100%, 100%);
+  }
 }

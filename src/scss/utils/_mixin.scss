@@ -1,7 +1,8 @@
-@use "../utils/unit" as *;
+@use "./../utils/unit" as *;
 
-// 포지션 관련 믹스인
-@mixin pos{
+// 포지션 관련 믹스인 ???
+
+@mixin pos {
   position: absolute;
 }
 
@@ -17,17 +18,16 @@
   right: $r;
 }
 
-@mixin posBottomY {
-  @include pos;
-  top: 100%;
-  transform: translateY(-100%);
-}
-
-
 @mixin posCenterX {
   @include pos;
   left: 50%;
   transform: translateX(-50%);
+}
+
+@mixin posBottomY {
+  @include pos;
+  top: 100%;
+  transform: translateY(-100%);
 }
 
 @mixin posCenterY {
@@ -42,7 +42,6 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 @mixin containerMax($max-width: 1024px) {
   max-width: rem($max-width);
@@ -89,16 +88,21 @@
 }
 
 // 그리드 믹스인
-@mixin gridbox($column-count: 12, $column-width:1fr, $column-gap: 16px, $row-gap: 0) {
+@mixin gridbox(
+  $column-count: 12,
+  $column-width: 1fr,
+  $row-gap: 0,
+  $column-gap: 16px
+) {
   display: grid;
-  grid-template-columns: repeat($column-count, 1fr);
+  grid-template-columns: repeat($column-count, $column-width);
   grid-template-rows: auto;
-  grid-column-gap: $column-gap;
-  grid-row-gap: $row-gap;
+  grid-column-gap: rem($column-gap);
+  grid-row-gap: rem($row-gap);
 }
 
 // ratio 믹스인
-@mixin ratio($w:16, $h:9) {
+@mixin ratio($w: 16, $h: 9) {
   aspect-ratio: $w / $h;
 }
 
@@ -106,4 +110,15 @@
 @mixin respons($width: max-width, $height: auto) {
   #{$width}: 100%;
   height: $height;
+}
+
+@mixin textOver {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin fit($fit: cover, $posX: 50%, $posY: 50%) {
+  object-fit: $fit;
+  object-position: $posX $posY;
 }
